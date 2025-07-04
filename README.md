@@ -5,7 +5,9 @@ This is a hybrid automation testing framework built with Selenium WebDriver, Cuc
 🔍 Key Highlights
 
 ✅ BDD with Cucumber – Write clear, business-readable Gherkin scenarios
+
 ✅ Data-Driven Testing – Supports both Scenario Outline and Excel, Config files based input
+
 ✅ Parallel Execution – Enabled via TestNG with ThreadLocal WebDriver
 ✅ Configurable – Easily switch browsers or base URL from config.properties
 ✅ Simple Reporting – Built-in Cucumber HTML reports, Extended reports with failure screen shots integrated
