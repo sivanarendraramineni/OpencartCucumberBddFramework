@@ -26,7 +26,7 @@
         Examples:
             | email                   | password | expectedMessage                      |
             |sivanarendra@gmail.com   | 12345    | True            |
-            |ramineni@gmail.com          | 123456  | True  |
+            |ramineni@gmail.com          | 123456  | True |
             | testuser@example.com    | wrong123 | Warning: No match for E-Mail Address and/or Password.|
             | admin@dummy.com         | admin    | Warning: No match for E-Mail Address and/or Password.|
             |                         | 12345    | Warning: No match for E-Mail Address and/or Password.|

@@ -1,29 +1,24 @@
 package utils;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
 
 public class ConfigReader {
+    private static final Properties prop = new Properties();
 
-    private static Properties prop;
-    public static Properties initproperties() throws FileNotFoundException {
-        prop= new Properties();
-        try{
-            FileInputStream ip= new FileInputStream("src/test/resources/config.properties");
+    static {
+        try {
+            FileInputStream ip = new FileInputStream("src/test/resources/config.properties");
             prop.load(ip);
-        }catch (IOException e){
+            System.out.println("Config file loaded successfully");
+        } catch (IOException e) {
+            System.err.println("Failed to load config.properties: " + e.getMessage());
             e.printStackTrace();
         }
-        return prop;
     }
 
-    public static String getProperty(String key) throws FileNotFoundException {
-        if (prop == null) {
-            initproperties();
-        }
+    public static String getProperty(String key) {
         return prop.getProperty(key);
     }
-
 }

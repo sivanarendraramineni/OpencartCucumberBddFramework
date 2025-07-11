@@ -20,17 +20,16 @@ import java.io.FileNotFoundException;
 
 public class Hooks {
 
-    public static WebDriver driver;
     private static final Logger log = LoggerHelper.getLogger(Hooks.class);
     private static ExtentReports extent = ExtentReportManager.getReporter();
     private static ThreadLocal<ExtentTest> test = new ThreadLocal<>();
 
     @Before
     public void setup(Scenario scenario) throws FileNotFoundException {
-        log.info("Launching browser...");
+        log.info("Launching browser in Thread: " + Thread.currentThread().getId());
         try {
-            driver = DriverSetup.getDriver();
-            if (driver == null) {
+            DriverSetup.initBrowser();
+            if (DriverSetup.getDriver() == null) {
                 throw new IllegalStateException("WebDriver initialization failed.");
             }
         } catch (Exception e) {
@@ -41,6 +40,7 @@ public class Hooks {
         if (url == null || url.isEmpty()) {
             throw new IllegalStateException("Property 'baseUrl' is missing or empty in the configuration.");
         }
+        WebDriver driver = DriverSetup.getDriver();
         log.info("Navigating to URL: " + url);
         driver.get(url);
 
@@ -49,32 +49,35 @@ public class Hooks {
 
         extentTest.log(Status.INFO, "Scenario Started: " + scenario.getName());
         scenario.attach("Scenario Started", "text/plain", scenario.getName());
-
-
     }
 
     @After
     public void tearDown(Scenario scenario) {
         ExtentTest extentTest = test.get();
+        WebDriver driver = DriverSetup.getDriver();
+
+        boolean isRetrying = utils.RetryAnalyzer.isRetryingNow();
 
         if (driver != null) {
             try {
                 if (scenario.isFailed()) {
+                    if (!isRetrying) {
+                        String screenshotPath = ScreenshotUtil.takeScreenshot(driver, scenario.getName());
+                        byte[] screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
+                        scenario.attach(screenshot, "image/png", scenario.getName());
 
-                    String screenshotPath = ScreenshotUtil.takeScreenshot(driver, scenario.getName());
-                    byte[] screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
-                    scenario.attach(screenshot, "image/png", scenario.getName());
-
-
-                    extentTest.log(Status.FAIL, "Scenario failed: " + scenario.getName());
-                    extentTest.addScreenCaptureFromPath(screenshotPath);
-                    log.info("Screenshot taken for failed scenario: " + screenshotPath);
+                        extentTest.log(Status.FAIL, " Scenario failed: " + scenario.getName());
+                        extentTest.addScreenCaptureFromPath(screenshotPath);
+                        log.info("Screenshot taken for failed scenario: " + screenshotPath);
+                    }
                 } else {
-                    log.info("Scenario PASSED: " + scenario.getName());
-                    extentTest.pass("Scenario passed: " + scenario.getName());
+                    if (!isRetrying) {
+                        log.info("Scenario PASSED: " + scenario.getName());
+                        extentTest.pass("Scenario passed: " + scenario.getName());
+                    }
                 }
             } catch (Exception e) {
-                log.error("Failed during Extent report update: " + e.getMessage(), e);
+                log.error("⚠ Failed during Extent report update: " + e.getMessage(), e);
             }
         }
 
@@ -83,4 +86,8 @@ public class Hooks {
         log.info("Browser closed successfully.");
         extent.flush();
     }
+
+    public static ExtentTest getTest() {
+        return test.get();
     }
+}
