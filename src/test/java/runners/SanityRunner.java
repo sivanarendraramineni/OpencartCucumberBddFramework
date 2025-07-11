@@ -7,11 +7,12 @@ import org.testng.annotations.DataProvider;
 @CucumberOptions(
         features = "src/test/java/features",
         glue = {"stepdefinitions", "hooks"},
-        plugin = {"pretty", "html:target/cucumbertestNG-reports.html"},
-        monochrome = true
+        plugin = {"pretty", "html:target/Sanity-reports.html"},
+        monochrome = true,
+        tags="@SanityTest"
 
 )
-public class TestNGRunner extends AbstractTestNGCucumberTests {
+public class SanityRunner extends AbstractTestNGCucumberTests {
         @Override
         @DataProvider(parallel = false)
         public Object[][] scenarios() {

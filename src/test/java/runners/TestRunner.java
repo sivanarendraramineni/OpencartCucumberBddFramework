@@ -10,8 +10,8 @@ import io.cucumber.junit.CucumberOptions;
         glue = {"stepdefinitions", "hooks"},              // step definitions & hooks
         plugin = {
                 "pretty",
-                "html:target/cucumber-reports.html",      // simple HTML report
-                "json:target/cucumber.json"               // useful for ExtentReport later
+                "html:target/cucumber-reports.html"    // simple HTML report
+                           // useful for ExtentReport later
         },
         monochrome = true
 

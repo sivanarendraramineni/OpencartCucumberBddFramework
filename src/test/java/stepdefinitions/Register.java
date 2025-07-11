@@ -1,5 +1,6 @@
 package stepdefinitions;
 
+import factory.DriverSetup;
 import hooks.Hooks;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Given;
@@ -19,7 +20,7 @@ import java.util.List;
 import java.util.Map;
 
 public class Register {
-    WebDriver driver = Hooks.driver;
+    WebDriver driver = DriverSetup.getDriver();;
     HomePage homePage = new HomePage(driver);
     RegisterPage registerPage = new RegisterPage(driver);
     AccountPage accountPage = new AccountPage(driver);

@@ -1,5 +1,6 @@
 package stepdefinitions;
 
+import factory.DriverSetup;
 import hooks.Hooks;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -15,7 +16,7 @@ import utils.LoggerHelper;
 public class Login {
 
 
-    WebDriver driver = Hooks.driver;
+    WebDriver driver = DriverSetup.getDriver();
     LoginPage loginPage= new LoginPage(driver);
     HomePage homePage= new HomePage(driver);
     AccountPage accountPage= new AccountPage(driver);
