@@ -1,9 +1,20 @@
 
  # Opencart Cucumber BDD Framework
 
+ 
+[![GitHub stars](https://img.shields.io/github/stars/sivanrendraramineni/OpencartCucumberBddFramework?style=social)](https://github.com/sivanrendraramineni/OpencartCucumberBddFramework/stargazers)
+
+[![GitHub forks](https://img.shields.io/github/forks/sivanrendraramineni/OpencartCucumberBddFramework?style=social)](https://github.com/sivanrendraramineni/OpencartCucumberBddFramework/network/members)
+
+[![Last Commit](https://img.shields.io/github/last-commit/sivanrendraramineni/OpencartCucumberBddFramework)](https://github.com/sivanrendraramineni/OpencartCucumberBddFramework)
+
+[![Issues](https://img.shields.io/github/issues/sivanrendraramineni/OpencartCucumberBddFramework)](https://github.com/sivanrendraramineni/OpencartCucumberBddFramework/issues)
+
+
 OpenCart Selenium Cucumber BDD Automation Framework
 
-This is a hybrid automation testing framework built with Selenium WebDriver, Cucumber BDD, TestNG, and Java, designed to test the OpenCart web application. The framework is modular, scalable, and supports data-driven and parallel testing, suitable for both local and CI/CD pipelines.
+This repository contains a complete, scalable hybrid automation testing framework designed for real-world testing of the OpenCart web application. Built with Selenium WebDriver, Cucumber BDD, TestNG, and Java, the framework supports modular development, parallel execution, data-driven testing, and seamless CI/CD integration.
+
 
 🔍 Key Highlights
 
