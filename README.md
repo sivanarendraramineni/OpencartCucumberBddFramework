@@ -16,7 +16,9 @@ This is a hybrid automation testing framework built with Selenium WebDriver, Cuc
 ✅ Retry Mechanism – Auto-retry for failed tests using RetryAnalyzer, improves resilience against flaky UI tests
 
 ✅ Smart Reporting –
+
     • Retries are visible in the console
+    
     • Only final result (pass/fail) is logged to Extent Reports with failure screenshots
     
 ✅ Page Object Model (POM) – Clean and reusable structure for UI elements
