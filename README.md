@@ -1,7 +1,7 @@
 
  # Opencart Cucumber BDD Framework
 
-![GitHub stars](https://img.shields.io/github/stars/sivanrendraramineni/OpencartCucumberBddFramework?style=social)
+![Stars](https://img.shields.io/github/stars/repo?style=social)(https://img.shields.io/github/stars/sivanrendraramineni/OpencartCucumberBddFramework?style=social)
 
 ![GitHub forks](https://img.shields.io/github/forks/sivanrendraramineni/OpencartCucumberBddFramework?style=social)
 
