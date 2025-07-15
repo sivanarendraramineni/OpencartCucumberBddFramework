@@ -2,13 +2,9 @@
  # Opencart Cucumber BDD Framework
 
  
-[![GitHub stars](https://img.shields.io/github/stars/sivanrendraramineni/OpencartCucumberBddFramework?style=social)](https://github.com/sivanrendraramineni/OpencartCucumberBddFramework/stargazers)
+[![GitHub stars](https://img.shields.io/github/stars/sivanarendraramineni/OpencartCucumberBddFramework?style=social)](https://github.com/sivanarendraramineni/OpencartCucumberBddFramework/stargazers)
 
-[![GitHub forks](https://img.shields.io/github/forks/sivanrendraramineni/OpencartCucumberBddFramework?style=social)](https://github.com/sivanrendraramineni/OpencartCucumberBddFramework/network/members)
-
-[![Last Commit](https://img.shields.io/github/last-commit/sivanrendraramineni/OpencartCucumberBddFramework)](https://github.com/sivanrendraramineni/OpencartCucumberBddFramework)
-
-[![Issues](https://img.shields.io/github/issues/sivanrendraramineni/OpencartCucumberBddFramework)](https://github.com/sivanrendraramineni/OpencartCucumberBddFramework/issues)
+[![GitHub forks](https://img.shields.io/github/forks/sivanarendraramineni/OpencartCucumberBddFramework?style=social)](https://github.com/sivanarendraramineni/OpencartCucumberBddFramework/network/members)
 
 
 OpenCart Selenium Cucumber BDD Automation Framework
