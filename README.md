@@ -45,5 +45,7 @@ Jenkins (CI/CD automation)
 
 👨‍💻 Author
 Siva Narendra Ramineni
+
 www.linkedin.com/in/sivanarendraramineni
+
 QA Automation Engineer | Selenium | Java | TestNG | Cucumber | REST API | Gen AI | GitHub Copilot
