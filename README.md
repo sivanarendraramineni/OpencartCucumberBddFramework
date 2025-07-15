@@ -63,3 +63,7 @@ Siva Narendra Ramineni
 www.linkedin.com/in/sivanarendraramineni
 
 QA Automation Engineer | Selenium | Java | TestNG | Cucumber | REST API | Gen AI | GitHub Copilot
+
+💡 **If you find this framework helpful, please consider** ⭐ **starring the repository** and 🍴 **forking it** to show your support.  
+
+Contributions, suggestions, and feedback are welcome!
