@@ -6,12 +6,12 @@ import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = "src/test/java/features",              // path to feature files
-        glue = {"stepdefinitions", "hooks"},              // step definitions & hooks
+        features = "src/test/java/features",
+        glue = {"stepdefinitions", "hooks"},
         plugin = {
                 "pretty",
-                "html:target/cucumber-reports.html"    // simple HTML report
-                           // useful for ExtentReport later
+                "html:target/cucumber-reports.html"
+
         },
         monochrome = true
 
