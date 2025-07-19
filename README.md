@@ -20,6 +20,8 @@ This repository contains a complete, scalable hybrid automation testing framewor
 
 ✅ Parallel Execution – Enabled via TestNG and ThreadLocal<WebDriver> for thread-safe, fast execution
 
+✅ Cross-Browser Parallel Execution – Execute tests concurrently across Chrome, Firefox, and Edge for true cross-browser validation
+
 ✅ Retry Mechanism – Auto-retry for failed tests using RetryAnalyzer, improves resilience against flaky UI tests
 
 ✅ Smart Reporting –
