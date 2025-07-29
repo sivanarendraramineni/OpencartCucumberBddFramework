@@ -32,7 +32,7 @@ This repository contains a complete, scalable hybrid automation testing framewor
     
 ✅ Page Object Model (POM) – Clean and reusable structure for UI elements
 
-• Centralized PageObjectManager class ensures lazy initialization and avoids duplicate object creation across all step definition classes
+    • Centralized PageObjectManager class ensures lazy initialization and avoids duplicate object creation across all step definition classes
 
 ✅ Configurable – Easily switch browser or base URL from config.properties
 
