@@ -4,6 +4,7 @@ import com.aventstack.extentreports.*;
 import com.aventstack.extentreports.Status;
 import factory.DriverSetup;
 import io.cucumber.java.*;
+import manager.PageObjectManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.*;
 import utils.*;
@@ -13,6 +14,7 @@ public class Hooks {
     private static final Logger log = LoggerHelper.getLogger(Hooks.class);
     private static final ExtentReports extent = ExtentReportManager.getReporter();
     private static final ThreadLocal<ExtentTest> test = new ThreadLocal<>();
+    private static PageObjectManager pageObjectManager;
 
     @Before
     public void setup(Scenario scenario) {
@@ -28,6 +30,7 @@ public class Hooks {
             if (DriverSetup.getDriver() == null) {
                 throw new IllegalStateException("WebDriver initialization failed.");
             }
+            pageObjectManager = new PageObjectManager(DriverSetup.getDriver());
         } catch (Exception e) {
             log.error("Failed to initialize the WebDriver: " + e.getMessage(), e);
             throw new IllegalStateException("WebDriver initialization failed.", e);
@@ -81,5 +84,14 @@ public class Hooks {
 
     public static ExtentTest getTest() {
         return test.get();
+    }
+    // ✅ Getter for PageObjectManager
+    public static PageObjectManager getPageObjectManager() {
+        return pageObjectManager;
+    }
+
+    // ✅ Getter for WebDriver
+    public static WebDriver getDriver() {
+        return DriverSetup.getDriver();
     }
 }
